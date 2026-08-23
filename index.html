@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     SEO — edit title/description/keywords here if needed
+     ============================================================ -->
+<title>Aayu Studio | Professional Video Editor</title>
+<meta name="description" content="Professional video editing services including Instagram Reels, wedding films, promotional videos, cinematic videos and event editing.">
+<meta name="keywords" content="video editor, video editing, instagram reels editing, wedding film editor, cinematic video editing, promotional video editing, youtube video editor, Aayu Studio">
+<meta name="author" content="Aayu Studio">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Aayu Studio | Professional Video Editor">
+<meta property="og:description" content="Professional video editing services including Instagram Reels, wedding films, promotional videos, cinematic videos and event editing.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og-cover.jpg">
+
+<!-- Favicon placeholder — replace assets/favicon.png with your logo -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+
+<!-- Fonts: Bebas Neue (cinematic display) + Manrope (clean body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     FILM TIMELINE LOADER (brief, then fades)
+     ============================================================ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-code">00:00:00:00</div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo" data-brand-name>AAYU STUDIO</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#" class="btn btn-accent nav-book" data-whatsapp-link data-whatsapp-message="Hello, I found your portfolio website and I want to book a service.">Book Now</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#contact">Contact</a>
+  <a href="#" class="btn btn-accent" data-whatsapp-link data-whatsapp-message="Hello, I found your portfolio website and I want to book a service.">Book Now</a>
+</div>
+
+<main>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-timecode" aria-hidden="true">
+      <span class="tc-ruler"></span>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow">Available for Freelance Projects</p>
+      <h1 class="hero-heading">I Turn Your Moments Into<br><span class="accent-text">Cinematic Stories.</span></h1>
+      <p class="hero-sub">Professional Video Editing &nbsp;•&nbsp; Reels &nbsp;•&nbsp; Wedding Films &nbsp;•&nbsp; Promotional Videos</p>
+
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn btn-outline">View My Work</a>
+        <a href="#" class="btn btn-accent" data-whatsapp-link data-whatsapp-message="Hello, I want to book a service. I found you through your website.">Book a Service</a>
+      </div>
+    </div>
+
+    <!-- Showreel placeholder: replace the poster image + <source> with your own reel -->
+    <div class="hero-reel glass">
+      <video id="heroReel" poster="assets/showreel-poster.jpg" muted loop playsinline controls>
+        <source src="assets/showreel.mp4" type="video/mp4">
+      </video>
+      <div class="reel-frame-corner tl"></div>
+      <div class="reel-frame-corner br"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section class="about" id="about">
+    <div class="section-head">
+      <p class="eyebrow">About Me</p>
+      <h2>The Editor Behind The Story</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-photo glass">
+        <!-- Replace assets/profile.jpg with your own photo -->
+        <img src="assets/profile.jpg" alt="Aayu Studio — Video Editor" loading="lazy">
+      </div>
+
+      <div class="about-text">
+        <p class="about-lead">
+          I'm a creative video editor who helps brands, businesses and individuals turn raw footage
+          into engaging, cinematic content that holds attention and drives results.
+        </p>
+        <p>
+          Every project starts with the story you're trying to tell — then I bring the pacing, color,
+          sound and rhythm that makes it unforgettable.
+        </p>
+
+        <ul class="specialty-list" id="specialtyList">
+          <!-- populated by script.js from CONFIG.specialties -->
+        </ul>
+
+        <a href="#" class="btn btn-accent" data-whatsapp-link data-whatsapp-message="Hello, I'd like to work with you on a video editing project. I found you through your website.">Work With Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES
+       ============================================================ -->
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="eyebrow">Services</p>
+      <h2>What I Can Edit For You</h2>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+      <!-- populated by script.js from CONFIG.services -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PORTFOLIO
+       ============================================================ -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-head">
+      <p class="eyebrow">Portfolio</p>
+      <h2>My Work</h2>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <!-- populated by script.js from CONFIG.categories -->
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- populated by script.js from CONFIG.portfolio -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SHOWREEL
+       ============================================================ -->
+  <section class="showreel" id="showreel">
+    <div class="showreel-inner glass">
+      <p class="eyebrow">Showreel</p>
+      <h2>My Best Work</h2>
+      <p class="showreel-sub">A glimpse of what I can create for you.</p>
+
+      <!-- Replace assets/showreel-full.mp4 with your full showreel -->
+      <div class="showreel-player">
+        <video id="showreelVideo" poster="assets/showreel-poster.jpg" controls playsinline>
+          <source src="assets/showreel-full.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <button class="btn btn-outline" id="watchShowreelBtn">Watch Showreel</button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICING
+       ============================================================ -->
+  <section class="pricing" id="pricing">
+    <div class="section-head">
+      <p class="eyebrow">Pricing</p>
+      <h2>Simple, Transparent Packages</h2>
+    </div>
+
+    <div class="pricing-grid" id="pricingGrid">
+      <!-- populated by script.js from CONFIG.pricing -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+       ============================================================ -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-head">
+      <p class="eyebrow">Client Reviews</p>
+      <h2>What Clients Say</h2>
+    </div>
+
+    <div class="testimonials-grid" id="testimonialsGrid">
+      <!-- populated by script.js from CONFIG.testimonials -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY CHOOSE ME
+       ============================================================ -->
+  <section class="why-choose" id="why-choose">
+    <div class="section-head">
+      <p class="eyebrow">Why Choose Me</p>
+      <h2>Editing That Makes A Difference</h2>
+    </div>
+
+    <div class="why-grid" id="whyGrid">
+      <!-- populated by script.js from CONFIG.whyChooseMe -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INSTAGRAM CTA
+       ============================================================ -->
+  <section class="instagram-cta">
+    <div class="instagram-inner glass">
+      <h3>See More Behind-The-Scenes Edits</h3>
+      <a href="#" class="btn btn-outline" id="instagramBtn" target="_blank" rel="noopener">
+        <span class="ig-icon" aria-hidden="true">◎</span> Follow Me on Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="section-head">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's Create Something Amazing.</h2>
+      <p class="contact-sub">Have a project in mind? Contact me and let's discuss it.</p>
+    </div>
+
+    <form class="contact-form glass" id="contactForm">
+      <div class="form-row">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" required placeholder="Your name">
+      </div>
+
+      <div class="form-row">
+        <label for="cf-whatsapp">WhatsApp Number</label>
+        <input type="tel" id="cf-whatsapp" name="whatsapp" required placeholder="+91 XXXXX XXXXX">
+      </div>
+
+      <div class="form-row">
+        <label for="cf-service">Service Required</label>
+        <select id="cf-service" name="service" required>
+          <!-- populated by script.js from CONFIG.services -->
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="cf-details">Project Details</label>
+        <textarea id="cf-details" name="details" rows="4" required placeholder="Tell me about your project..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-accent btn-full">Send on WhatsApp</button>
+    </form>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo" data-brand-name>AAYU STUDIO</p>
+      <p class="footer-tagline">Professional Video Editing</p>
+    </div>
+
+    <nav class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="footer-contact">
+      <a href="#" id="footerInstagram" target="_blank" rel="noopener" data-instagram-handle>@wish_master._.76</a>
+      <a href="#" data-whatsapp-link data-whatsapp-message="Hello, I found your website and I'd like to get in touch.">Contact Me on WhatsApp</a>
+    </div>
+  </div>
+
+  <p class="footer-copy">© <span id="footerYear">2026</span> <span data-brand-name>Aayu Studio</span>. All Rights Reserved.</p>
+</footer>
+
+<!-- ============================================================
+     FLOATING WHATSAPP BUTTON
+     ============================================================ -->
+<a href="#" class="whatsapp-float" data-whatsapp-link data-whatsapp-message="Hello, I found your website and I'd like to know more about your video editing services." aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.36.687 4.56 1.874 6.406L4 29l7.78-1.84A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.6c-1.98 0-3.86-.55-5.47-1.51l-.39-.23-4.62 1.09 1.11-4.5-.25-.4A9.53 9.53 0 0 1 6.4 15c0-5.3 4.31-9.6 9.6-9.6s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6zm5.27-7.19c-.29-.14-1.72-.85-1.99-.95-.27-.1-.46-.14-.66.14-.19.29-.75.95-.92 1.14-.17.19-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51h-.56c-.19 0-.51.07-.78.36-.27.29-1.02 1-1.02 2.43 0 1.43 1.04 2.82 1.19 3.01.14.19 2.05 3.13 4.96 4.39.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.11.55-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.13-.26-.2-.55-.34z"/>
+  </svg>
+  <span>Chat on WhatsApp</span>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
