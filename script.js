@@ -85,42 +85,42 @@ const CONFIG = {
       title: "Sunset Reel Edit",
       category: "Reels",
       desc: "High-retention reel edit with punchy transitions and beat-synced cuts.",
-      thumbnail: "assets/portfolio/reel-1.jpg",
+      thumbnail: "assets/reel-1.jpg",
       videoURL: "#"
     },
     {
       title: "Riya & Kunal — Wedding Highlight",
       category: "Wedding",
       desc: "Emotional wedding highlight film with cinematic color grading.",
-      thumbnail: "assets/portfolio/wedding-1.jpg",
+      thumbnail: "assets/wedding-1.jpg",
       videoURL: "#"
     },
     {
       title: "Local Cafe Promo",
       category: "Promotional",
       desc: "30-second promotional video built to drive footfall.",
-      thumbnail: "assets/portfolio/promo-1.jpg",
+      thumbnail: "assets/promo-1.jpg",
       videoURL: "#"
     },
     {
       title: "Mountain Story",
       category: "Cinematic",
       desc: "Short cinematic film with moody color grading and sound design.",
-      thumbnail: "assets/portfolio/cinematic-1.jpg",
+      thumbnail: "assets/cinematic-1.jpg",
       videoURL: "#"
     },
     {
       title: "Tech Review Edit",
       category: "YouTube",
       desc: "Fast-paced long-form YouTube edit with motion graphics.",
-      thumbnail: "assets/portfolio/youtube-1.jpg",
+      thumbnail: "assets/youtube-1.jpg",
       videoURL: "#"
     },
     {
       title: "Shop Opening Recap",
       category: "Events",
       desc: "Highlight recap video for a store launch event.",
-      thumbnail: "assets/portfolio/event-1.jpg",
+      thumbnail: "assets/event-1.jpg",
       videoURL: "#"
     }
   ],
