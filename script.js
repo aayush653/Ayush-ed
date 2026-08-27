@@ -130,7 +130,7 @@ const CONFIG = {
     {
       name: "Basic",
       badge: "",
-      price: "1,000",
+      price: "2,000",
       features: [
         "Short Reel Editing",
         "Basic Effects",
@@ -143,7 +143,7 @@ const CONFIG = {
     {
       name: "Standard",
       badge: "⭐",
-      price: "2,000",
+      price: "3,000",
       features: [
         "Professional Reel Editing",
         "Advanced Effects",
@@ -161,7 +161,7 @@ const CONFIG = {
       price: "5,000",
       features: [
         "Cinematic Editing",
-        "Advanced VFX",
+        "maximum 500k Instagram views  ",
         "Professional Color Grading",
         "Sound Design",
         "Advanced Effects",
