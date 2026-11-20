@@ -86,7 +86,7 @@ const CONFIG = {
       category: "Reels",
       desc: "High-retention reel edit with punchy transitions and beat-synced cuts.",
       thumbnail: "assets/reel-1.jpg",
-      videoURL: "https://www.instagram.com/reel/DcdwAd2S0kH/?igsi=dDh6Y3p4NndhZ2Y4"
+      videoURL: "https://www.instagram.com/reel/DedZGoNyTqE/?gwpx=OGJsdzQzcmNrbmFl"
     },
     {
       title: "Riya & Kunal — Wedding Highlight",
