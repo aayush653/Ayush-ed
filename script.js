@@ -100,7 +100,7 @@ const CONFIG = {
       category: "Promotional",
       desc: "30-second promotional video built to drive footfall.",
       thumbnail: "assets/promo-1.jpg",
-      videoURL: "https://www.instagram.com/reel/DYEWMQBTXEd/?igsi=Y2EzMHYzdGpxZTdw"
+      videoURL: "https://www.instagram.com/reel/DdvIi8dSNGd/?fqnt=MWVkbmM4aDd2Y2szOQ=="
     },
     {
       title: "Mountain Story",
@@ -114,7 +114,7 @@ const CONFIG = {
       category: "YouTube",
       desc: "Fast-paced long-form YouTube edit with motion graphics.",
       thumbnail: "assets/youtube-1.jpg",
-      videoURL: "https://www.instagram.com/reel/DcdwAd2S0kH/?igsi=dDh6Y3p4NndhZ2Y4"
+      videoURL: "https://www.instagram.com/reel/DdvIi8dSNGd/?gwpx=MWVkbmM4aDd2Y2szOQ=="
     },
     {
       title: "Shop Opening Recap",
