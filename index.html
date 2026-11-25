@@ -27,6 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="reels.css">
 </head>
 <body>
 
@@ -191,6 +192,27 @@
   </section>
 
   <!-- ============================================================
+       REFERENCE REELS  (edit videos in reels-data.js)
+       ============================================================ -->
+  <section class="reels" id="reference-reels">
+    <div class="reels-inner glass">
+      <div class="section-head">
+        <p class="eyebrow">Reels</p>
+        <h2>Reference Reels</h2>
+        <p class="reels-sub">Explore editing styles by category. Tap any reel to watch.</p>
+      </div>
+
+      <div class="filter-bar" id="reelsFilterBar" role="group" aria-label="Filter reels by category">
+        <!-- populated by reels.js -->
+      </div>
+
+      <div class="reels-grid" id="reelsGrid">
+        <!-- populated by reels.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        PRICING
        ============================================================ -->
   <section class="pricing" id="pricing">
@@ -321,6 +343,29 @@
   <span>Chat on WhatsApp</span>
 </a>
 
+<!-- ============================================================
+     REFERENCE REELS — VIDEO PLAYER MODAL
+     ============================================================ -->
+<dialog class="reel-modal" id="reelModal" aria-labelledby="reelModalTitle">
+  <div class="reel-modal-head">
+    <div>
+      <p class="eyebrow" id="reelModalCategory"></p>
+      <h3 id="reelModalTitle"></h3>
+    </div>
+    <button type="button" class="reel-btn" id="reelClose" aria-label="Close video">×</button>
+  </div>
+  <div class="reel-modal-frame">
+    <video id="reelModalVideo" controls playsinline preload="metadata"></video>
+    <div class="reel-modal-error" id="reelModalError" hidden>This video isn't available yet.</div>
+  </div>
+  <div class="reel-modal-nav">
+    <button type="button" class="reel-btn" id="reelPrev" aria-label="Previous reel">‹</button>
+    <button type="button" class="reel-btn" id="reelNext" aria-label="Next reel">›</button>
+  </div>
+</dialog>
+
 <script src="script.js"></script>
+<script src="reels-data.js"></script>
+<script src="reels.js"></script>
 </body>
 </html>
