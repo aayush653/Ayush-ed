@@ -32,7 +32,7 @@
       grid.innerHTML = visible.length ? visible.map((r, i) => `
         <button type="button" class="reel-card" data-index="${i}" style="--i:${i}"
                 aria-label="Play ${esc(r.title)}">
-          <img src="${esc(r.thumbnail)}" alt="" loading="lazy">
+          <img src="${esc(r.thumbnail)}" alt="" loading="lazy" onerror="this.style.display='none'">
           <span class="reel-play">${PLAY_ICON}</span>
           <span class="reel-meta">
             <span class="reel-cat">${esc(r.category)}</span>

@@ -28,51 +28,51 @@ const REEL_CATEGORIES = [
 
 const REELS = [
   {
-    title: "Product Ad — Coming Soon",
+    title: "Product Ad",
     category: "Product Ads",
-    video: "assets/reels/videos/product-ads.mp4",
-    thumbnail: "assets/reels/thumbs/product-ads.jpg"
+    video: "videos/product-ad-01.mp4",
+    thumbnail: "videos/product-ad-01.jpg"
   },
   {
-    title: "Cinematic Reel — Coming Soon",
+    title: "Cinematic Reel",
     category: "Cinematic Reels",
-    video: "assets/reels/videos/cinematic-reels.mp4",
-    thumbnail: "assets/reels/thumbs/cinematic-reels.jpg"
+    video: "videos/cinematic-reel-01.mp4",
+    thumbnail: "videos/cinematic-reel-01.jpg"
   },
   {
-    title: "Motion Graphics — Coming Soon",
+    title: "Motion Graphics",
     category: "Motion Graphics",
-    video: "assets/reels/videos/motion-graphics.mp4",
-    thumbnail: "assets/reels/thumbs/motion-graphics.jpg"
+    video: "videos/motion-graphics-01.mp4",
+    thumbnail: "videos/motion-graphics-01.jpg"
   },
   {
-    title: "Talking Head — Coming Soon",
+    title: "Talking Head",
     category: "Talking Head Reels",
-    video: "assets/reels/videos/talking-head.mp4",
-    thumbnail: "assets/reels/thumbs/talking-head.jpg"
+    video: "videos/talking-head-01.mp4",
+    thumbnail: "videos/talking-head-01.jpg"
   },
   {
-    title: "Fashion Ad — Coming Soon",
+    title: "Fashion Ad",
     category: "Fashion Ads",
-    video: "assets/reels/videos/fashion-ads.mp4",
-    thumbnail: "assets/reels/thumbs/fashion-ads.jpg"
+    video: "videos/fashion-ad-01.mp4",
+    thumbnail: "videos/fashion-ad-01.jpg"
   },
   {
-    title: "Food Commercial — Coming Soon",
+    title: "Food Commercial",
     category: "Food Commercials",
-    video: "assets/reels/videos/food-commercials.mp4",
-    thumbnail: "assets/reels/thumbs/food-commercials.jpg"
+    video: "videos/food-commercial-01.mp4",
+    thumbnail: "videos/food-commercial-01.jpg"
   },
   {
-    title: "Real Estate Ad — Coming Soon",
+    title: "Real Estate Ad",
     category: "Real Estate Ads",
-    video: "assets/reels/videos/real-estate.mp4",
-    thumbnail: "assets/reels/thumbs/real-estate.jpg"
+    video: "videos/real-estate-ad-01.mp4",
+    thumbnail: "videos/real-estate-ad-01.jpg"
   },
   {
-    title: "Before & After — Coming Soon",
+    title: "Before & After",
     category: "Before & After Editing",
-    video: "assets/reels/videos/before-after.mp4",
-    thumbnail: "assets/reels/thumbs/before-after.jpg"
+    video: "videos/before-after-01.mp4",
+    thumbnail: "videos/before-after-01.jpg"
   }
 ];
