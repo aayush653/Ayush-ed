@@ -1,7 +1,6 @@
+
 /* ================================================================
-   REFERENCE REELS — behaviour (cards, filters, video modal)
-   Edit your videos in reels-data.js, not here.
-   Wrapped in a function so nothing clashes with script.js.
+   REFERENCE REELS — Auto Preview + Video Modal
    ================================================================ */
 (() => {
   const PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
@@ -21,18 +20,24 @@
     const error = document.getElementById("reelModalError");
     const prev = document.getElementById("reelPrev");
     const next = document.getElementById("reelNext");
+    const close = document.getElementById("reelClose");
 
-    let visible = REELS;   // reels shown under the active filter
+    let visible = REELS;
     let current = 0;
 
-    /* ---- Cards ---- */
     function renderCards(filter) {
-      visible = filter === "All" ? REELS : REELS.filter(r => r.category === filter);
+      visible = filter === "All"
+        ? REELS
+        : REELS.filter(r => r.category === filter);
 
       grid.innerHTML = visible.length ? visible.map((r, i) => `
-        <button type="button" class="reel-card" data-index="${i}" style="--i:${i}"
-                aria-label="Play ${esc(r.title)}">
-          <img src="${esc(r.thumbnail)}" alt="" loading="lazy" onerror="this.style.display='none'">
+        <button type="button" class="reel-card" data-index="${i}"
+          style="--i:${i}" aria-label="Play ${esc(r.title)}">
+          <video class="reel-preview"
+            src="${esc(r.video)}"
+            muted autoplay loop playsinline preload="metadata"
+            poster="${esc(r.thumbnail)}"
+            aria-hidden="true"></video>
           <span class="reel-play">${PLAY_ICON}</span>
           <span class="reel-meta">
             <span class="reel-cat">${esc(r.category)}</span>
@@ -40,44 +45,71 @@
           </span>
         </button>
       `).join("") : '<p class="reels-empty">New reels coming soon.</p>';
+
+      // Ensure previews remain muted and looping.
+      grid.querySelectorAll(".reel-preview").forEach(video => {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.play().catch(() => {});
+      });
     }
 
-    /* ---- Filters ---- */
     bar.innerHTML = ["All", ...REEL_CATEGORIES].map((c, i) => `
-      <button type="button" class="filter-btn${i === 0 ? " active" : ""}"
-              aria-pressed="${i === 0}" data-category="${esc(c)}">${esc(c)}</button>
+      <button type="button"
+        class="filter-btn${i === 0 ? " active" : ""}"
+        aria-pressed="${i === 0}"
+        data-category="${esc(c)}">${esc(c)}</button>
     `).join("");
 
     bar.addEventListener("click", e => {
       const btn = e.target.closest(".filter-btn");
       if (!btn) return;
+
       bar.querySelectorAll(".filter-btn").forEach(b => {
         b.classList.toggle("active", b === btn);
         b.setAttribute("aria-pressed", String(b === btn));
       });
-      // Keep the tapped chip in view on mobile (scrolls the bar only, not the page)
-      bar.scrollTo({ left: btn.offsetLeft - (bar.clientWidth - btn.offsetWidth) / 2, behavior: "smooth" });
+
+      bar.scrollTo({
+        left: btn.offsetLeft - (bar.clientWidth - btn.offsetWidth) / 2,
+        behavior: "smooth"
+      });
+
       renderCards(btn.dataset.category);
     });
 
-    /* ---- Modal player ---- */
     function load(index) {
+      if (!visible.length) return;
+
       current = (index + visible.length) % visible.length;
       const reel = visible[current];
 
       error.hidden = true;
       title.textContent = reel.title;
       category.textContent = reel.category;
-      player.poster = reel.thumbnail;
+
+      player.pause();
       player.src = reel.video;
-      player.play().catch(() => {});   // if blocked, the visitor presses play
+      player.poster = reel.thumbnail;
+      player.muted = false;
+      player.loop = false;
+      player.load();
+
+      const playPromise = player.play();
+      if (playPromise) playPromise.catch(() => {
+        // Visitor can press the video play control.
+      });
 
       prev.hidden = next.hidden = visible.length < 2;
     }
 
     function open(index) {
-      // Stop the hero reel / showreel so two videos never play together
-      document.querySelectorAll("video").forEach(v => { if (v !== player) v.pause(); });
+      grid.querySelectorAll(".reel-preview").forEach(video => video.pause());
+
+      document.querySelectorAll("video").forEach(v => {
+        if (v !== player) v.pause();
+      });
+
       document.documentElement.classList.add("reel-modal-open");
       modal.showModal();
       load(index);
@@ -88,26 +120,30 @@
       if (card) open(Number(card.dataset.index));
     });
 
-    document.getElementById("reelClose").addEventListener("click", () => modal.close());
+    close.addEventListener("click", () => modal.close());
     prev.addEventListener("click", () => load(current - 1));
     next.addEventListener("click", () => load(current + 1));
 
-    // Click on the dark backdrop closes the player
-    modal.addEventListener("click", e => { if (e.target === modal) modal.close(); });
+    modal.addEventListener("click", e => {
+      if (e.target === modal) modal.close();
+    });
 
-    // Left/right arrows switch reels (unless the video controls are using them)
     modal.addEventListener("keydown", e => {
       if (e.target === player || visible.length < 2) return;
       if (e.key === "ArrowLeft") load(current - 1);
       if (e.key === "ArrowRight") load(current + 1);
     });
 
-    // Runs for every way of closing: button, backdrop, Esc key
     modal.addEventListener("close", () => {
       player.pause();
       player.removeAttribute("src");
       player.load();
       document.documentElement.classList.remove("reel-modal-open");
+
+      grid.querySelectorAll(".reel-preview").forEach(video => {
+        video.muted = true;
+        video.play().catch(() => {});
+      });
     });
 
     player.addEventListener("error", () => {
